@@ -1,0 +1,1137 @@
+{
+	"info": {
+		"_postman_id": "9ed39a44-907b-4155-9686-4ea0a1565f7b",
+		"name": "Twelve Data",
+		"description": "**WORK IN PROGRESS**\n\nI'm creating this postman collection from [https://twelvedata.com/docs](https://twelvedata.com/docs)\n\nreach me on:\n\n*   [https://twitter.com/VictorHVS](https://twitter.com/VictorHVS)_\n*   [https://www.linkedin.com/in/victorhvs/](https://www.linkedin.com/in/victorhvs/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "98525"
+	},
+	"item": [
+		{
+			"name": "Reference Data",
+			"item": [
+				{
+					"name": "Stocks List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/stocks?symbol=AMZN",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"stocks"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "AMZN",
+									"description": "• Parameter is optional\n• Filter by symbol"
+								},
+								{
+									"key": "exchange",
+									"value": "NASDAQ",
+									"description": "• Parameter is optional\n• Filter by exchange name or mic code",
+									"disabled": true
+								},
+								{
+									"key": "mic_code",
+									"value": "XNGS",
+									"description": "• Parameter is optional\n• Filter by market identifier code (MIC) under ISO 10383 standard",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "United States",
+									"description": "• Parameter is optional\n• Filter by country name or alpha code",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "Common Stock",
+									"description": "• Parameter is optional\n• Filter by instrument type",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "• Parameter is optional\n• Value can be JSON or CSV; Default JSON",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": null,
+									"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+									"disabled": true
+								},
+								{
+									"key": "show_plan",
+									"value": "true",
+									"description": "• Parameter is optional\n• Adds info on which plan symbol is available\n• Boolean; Default false",
+									"disabled": true
+								}
+							]
+						},
+						"description": "## Stocks List\n\nThis API call returns an array of symbols available at Twelve Data API. This list is updated daily.\n\n### HTTP route\n\n[`/stocks`](https://api.twelvedata.com/stocks?source=docs)\n\nEndFragmentStartFragment\n\n### API credits\n\n`1` per request\n\nEndFragmentStartFragment\n\n### API parameters\n\n| Parameter | Details |\n| --- | --- |\n| **symbol** | • Parameter is optional  <br>• Filter by symbol |\n| **exchange** | • Parameter is optional  <br>• Filter by exchange name or mic code |\n| **mic_code** | • Parameter is optional  <br>• Filter by market identifier code (MIC) under ISO 10383 standard |\n| **country** | • Parameter is optional  <br>• Filter by country name or alpha code |\n| **type** | • Parameter is optional  <br>• Filter by instrument type |\n| **format** | • Parameter is optional  <br>• Value can be `JSON` or `CSV`; Default `JSON` |\n| **delimiter** | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n| **show_plan** | • Parameter is optional  <br>• Adds info on which plan symbol is available  <br>• Boolean; Default `false` |\n\nStartFragment\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **symbol** | instrument symbol (ticker) |\n| **name** | full name of instrument |\n| **currency** | currency of the instrument according to the ISO 4217 standard |\n| **exchange** | exchange where instrument is traded |\n| **mic_code** | market identifier code (MIC) under ISO 10383 standard |\n| **country** | country where exchange is located |\n| **type** | common issue type |\n\n### JSON request example\n\n[`https://api.twelvedata.com/stocks`](https://api.twelvedata.com/stocks?source=docs)\n\n[`https://api.twelvedata.com/stocks?symbol=AAPL`](https://api.twelvedata.com/stocks?symbol=AAPL&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/stocks?format=CSV`](https://api.twelvedata.com/stocks?format=CSV&source=docs)"
+					},
+					"response": [
+						{
+							"name": "Stocks List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/stocks?symbol=AMZN",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"stocks"
+									],
+									"query": [
+										{
+											"key": "symbol",
+											"value": "AMZN",
+											"description": "• Parameter is optional\n• Filter by symbol"
+										},
+										{
+											"key": "exchange",
+											"value": "NASDAQ",
+											"description": "• Parameter is optional\n• Filter by exchange name or mic code",
+											"disabled": true
+										},
+										{
+											"key": "mic_code",
+											"value": "XNGS",
+											"description": "• Parameter is optional\n• Filter by market identifier code (MIC) under ISO 10383 standard",
+											"disabled": true
+										},
+										{
+											"key": "country",
+											"value": "United States",
+											"description": "• Parameter is optional\n• Filter by country name or alpha code",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Common Stock",
+											"description": "• Parameter is optional\n• Filter by instrument type",
+											"disabled": true
+										},
+										{
+											"key": "format",
+											"value": "json",
+											"description": "• Parameter is optional\n• Value can be JSON or CSV; Default JSON",
+											"disabled": true
+										},
+										{
+											"key": "delimiter",
+											"value": null,
+											"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+											"disabled": true
+										},
+										{
+											"key": "show_plan",
+											"value": "true",
+											"description": "• Parameter is optional\n• Adds info on which plan symbol is available\n• Boolean; Default false",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 04 Jun 2022 21:32:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, Accept-Encoding, Authorization, Accept, Origin, X-Requested-With"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-cache-status",
+									"value": "MISS"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=v6mZ25bg21mpQYE0nNOa8mu4WBO5OPuUlEPkHD7xjvYl9NIZsE1ZiS9sU%2FE9NfmwZa24QSMZ%2B6IailO2k4Ef4WTZUgdTNG6NAKCUzNbBWH3y8QDZA1GwxRYoen1yv0jLO7Zcb%2F4%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "7163c7fa3899a771-EZE"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"symbol\": \"AMZN\",\n            \"name\": \"Amazon.com, Inc.\",\n            \"currency\": \"ARS\",\n            \"exchange\": \"BCBA\",\n            \"mic_code\": \"XBUE\",\n            \"country\": \"Argentina\",\n            \"type\": \"Common Stock\"\n        },\n        {\n            \"symbol\": \"AMZN\",\n            \"name\": \"Amazon.com, Inc.\",\n            \"currency\": \"EUR\",\n            \"exchange\": \"MTA\",\n            \"mic_code\": \"XMIL\",\n            \"country\": \"Italy\",\n            \"type\": \"Common Stock\"\n        },\n        {\n            \"symbol\": \"AMZN\",\n            \"name\": \"Amazon.com, Inc.\",\n            \"currency\": \"CAD\",\n            \"exchange\": \"NEO\",\n            \"mic_code\": \"NEOE\",\n            \"country\": \"Canada\",\n            \"type\": \"Common Stock\"\n        },\n        {\n            \"symbol\": \"AMZN\",\n            \"name\": \"Amazon.com Inc\",\n            \"currency\": \"USD\",\n            \"exchange\": \"NASDAQ\",\n            \"mic_code\": \"XNGS\",\n            \"country\": \"United States\",\n            \"type\": \"Common Stock\"\n        },\n        {\n            \"symbol\": \"AMZN\",\n            \"name\": \"Amazon.com, Inc.\",\n            \"currency\": \"MXN\",\n            \"exchange\": \"BMV\",\n            \"mic_code\": \"XMEX\",\n            \"country\": \"Mexico\",\n            \"type\": \"Common Stock\"\n        },\n        {\n            \"symbol\": \"AMZN\",\n            \"name\": \"Amazon.com, Inc.\",\n            \"currency\": \"USD\",\n            \"exchange\": \"BVS\",\n            \"mic_code\": \"XSGO\",\n            \"country\": \"Chile\",\n            \"type\": \"Common Stock\"\n        }\n    ],\n    \"status\": \"ok\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Forex Pairs List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/forex_pairs?symbol=EUR/USD",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"forex_pairs"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "EUR/USD",
+									"description": "• Parameter is optional\n• Filter by symbol"
+								},
+								{
+									"key": "currency_base",
+									"value": "Major",
+									"description": "• Parameter is optional\n• Filter by currency base",
+									"disabled": true
+								},
+								{
+									"key": "currency_quote",
+									"value": "Euro",
+									"description": "• Parameter is optional\n• Filter by currency quote",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "US Dollar",
+									"description": "• Parameter is optional\n• Value can be CSV or JSON; Default JSON",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": ";",
+									"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+									"disabled": true
+								}
+							]
+						},
+						"description": "StartFragment\n\n## Forex Pairs List\n\nThis API call return array of forex pairs available at Twelve Data API. This list is daily updated.\n\nEndFragmentStartFragment\n\n### HTTP route\n\n[`/forex_pairs`](https://api.twelvedata.com/forex_pairs?source=docs)\n\nEndFragmentStartFragment\n\n### API credits\n\n`1` per request\n\nEndFragmentStartFragment\n\n### API parameters\n\n| Parameter | Details |\n| --- | --- |\n| **symbol** | • Parameter is optional  <br>• Filter by symbol |\n| **currency_base** | • Parameter is optional  <br>• Filter by currency base |\n| **currency_quote** | • Parameter is optional  <br>• Filter by currency quote |\n| **format** | • Parameter is optional  <br>• Value can be `CSV` or `JSON`; Default `JSON` |\n| **delimiter** | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n\nEndFragment  \nStartFragment\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **symbol** | currency pair according to ISO 4217 standard codes with slash(/) delimiter |\n| **currency_group** | group to which currency pair belongs to, could be: Major, Minor, Exotic and Exotic-Cross |\n| **currency_base** | base currency name according to ISO 4217 standard |\n| **currency_quote** | quote currency name according to ISO 4217 standard |\n\n### JSON request example\n\n[`https://api.twelvedata.com/forex_pairs`](https://api.twelvedata.com/forex_pairs?source=docs)\n\n[`https://api.twelvedata.com/forex_pairs?symbol=EUR/USD`](https://api.twelvedata.com/forex_pairs?symbol=EUR/USD&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/forex_pairs?format=CSV`](https://api.twelvedata.com/forex_pairs?format=CSV&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Cryptocurrencies List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cryptocurrencies",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cryptocurrencies"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "ETH/USD",
+									"description": "• Parameter is optional  \n• Filter by symbol",
+									"disabled": true
+								},
+								{
+									"key": "exchange",
+									"value": "Binance",
+									"description": "• Parameter is optional  \n• Filter by exchange name",
+									"disabled": true
+								},
+								{
+									"key": "currency_base",
+									"value": "Ethereum",
+									"description": "• Parameter is optional  \n• Filter by currency base",
+									"disabled": true
+								},
+								{
+									"key": "currency_quote",
+									"value": "US Dollar",
+									"description": "• Parameter is optional  \n• Filter by currency quote",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "CSV",
+									"description": "• Parameter is optional  \n• Value can be CSV or JSON; Default JSON",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": ";",
+									"description": "• Parameter is optional  \n• Specify the delimiter used when downloading the CSV file  \n• Default semicolon ;",
+									"disabled": true
+								}
+							]
+						},
+						"description": "StartFragment\n\n## Cryptocurrencies List\n\nThis API call return array of cryptocurrency pairs available at Twelve Data API. This list is daily updated.\n\nEndFragment\n\nStartFragment\n\n### HTTP route\n\n[`/cryptocurrencies`](https://api.twelvedata.com/cryptocurrencies?source=docs)\n\nEndFragment\n\nStartFragment\n\n### API credits\n\n`1` per request\n\nEndFragment\n\nStartFragment\n\n### API parameters\n\n| Parameter | Details |\n| --- | --- |\n| **symbol** | • Parameter is optional  <br>• Filter by symbol |\n| **exchange** | • Parameter is optional  <br>• Filter by exchange name |\n| **currency_base** | • Parameter is optional  <br>• Filter by currency base |\n| **currency_quote** | • Parameter is optional  <br>• Filter by currency quote |\n| **format** | • Parameter is optional  <br>• Value can be `CSV` or `JSON`; Default `JSON` |\n| **delimiter** | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **symbol** | cryptocurrency pair codes with slash(/) delimiter |\n| **available_exchanges** | array of exchanges where cryptocurrency is traded |\n| **currency_base** | base cryptocurrency name |\n| **currency_quote** | quote cryptocurrency name |\n\n### JSON request example\n\n[`https://api.twelvedata.com/cryptocurrencies`](https://api.twelvedata.com/cryptocurrencies?source=docs)\n\n[`https://api.twelvedata.com/cryptocurrencies?symbol=BTC/USD`](https://api.twelvedata.com/cryptocurrencies?symbol=BTC/USD&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/cryptocurrencies?format=CSV`](https://api.twelvedata.com/cryptocurrencies?format=CSV&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "ETF List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/etf?symbol=AAA&country=United States",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"etf"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "AAA"
+								},
+								{
+									"key": "exchange",
+									"value": "NYSE",
+									"disabled": true
+								},
+								{
+									"key": "mic_code",
+									"value": "ARCX",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "United States"
+								},
+								{
+									"key": "format",
+									"value": "CSV",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": ";",
+									"disabled": true
+								}
+							]
+						},
+						"description": "StartFragment\n\n## ETF List\n\nThis API call return array of ETFs available at Twelve Data API. This list is daily updated.\n\nEndFragment\n\n  \n  \n\nStartFragment\n\n### HTTP route\n\n[`/etf`](https://api.twelvedata.com/etf?source=docs)\n\nEndFragment\n\n  \n  \n\nStartFragment\n\n### API credits\n\n`1` per request\n\nEndFragment\n\n  \n  \n\nStartFragment\n\n### API parameters\n\n| Parameter | Details |\n| --- | --- |\n| **symbol** | • Parameter is optional  <br>• Filter by symbol |\n| **exchange** | • Parameter is optional  <br>• Filter by exchange name or mic code |\n| **mic_code** | • Parameter is optional  <br>• Filter by market identifier code (MIC) under ISO 10383 standard |\n| **country** | • Parameter is optional  <br>• Filter by country name or alpha code |\n| **format** | • Parameter is optional  <br>• Value can be `CSV` or `JSON`; Default `JSON` |\n| **delimiter** | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n| **show_plan** | • Parameter is optional  <br>• Adds info on which plan symbol is available  <br>• Boolean; Default `false` |\n\nEndFragment\n\n  \n  \n\nStartFragment\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **symbol** | instrument symbol (ticker) |\n| **name** | full name of instrument |\n| **currency** | currency in which instrument is traded by ISO 4217 standard |\n| **exchange** | exchange where ETF is traded |\n| **mic_code** | market identifier code (MIC) under ISO 10383 standard |\n\n### JSON request example\n\n[`https://api.twelvedata.com/etf`](https://api.twelvedata.com/etf?source=docs)\n\n[`https://api.twelvedata.com/etf?symbol=QQQ`](https://api.twelvedata.com/etf?symbol=QQQ&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/etf?format=CSV`](https://api.twelvedata.com/etf?format=CSV&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Indices List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/indices?country=Brazil&show_plan=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"indices"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "AAA",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "Brazil"
+								},
+								{
+									"key": "format",
+									"value": "CSV",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": ";",
+									"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+									"disabled": true
+								},
+								{
+									"key": "show_plan",
+									"value": "true",
+									"description": "• Parameter is optional\n• Adds info on which plan symbol is available\n• Boolean; Default false"
+								}
+							]
+						},
+						"description": "StartFragment\n\n## Indices List\n\nThis API call return array of indices available at Twelve Data API. This list is daily updated.\n\nEndFragmentStartFragment\n\n### HTTP route\n\n[`/indices`](https://api.twelvedata.com/indices?source=docs)\n\nEndFragmentStartFragment\n\n### API credits\n\n`1` per request\n\nEndFragmentStartFragment\n\n### API parameters\n\n| Parameter | Details |\n| --- | --- |\n| **symbol** | • Parameter is optional  <br>• Filter by symbol |\n| **country** | • Parameter is optional  <br>• Filter by country name or alpha code |\n| **format** | • Parameter is optional  <br>• Value can be `CSV` or `JSON`; Default `JSON` |\n| **delimiter** | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n| **show_plan** | • Parameter is optional  <br>• Adds info on which plan symbol is available  <br>• Boolean; Default `false` |\n\nEndFragment\n\nStartFragment\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **symbol** | instrument symbol (ticker) |\n| **name** | full name of instrument |\n| **country** | country where the index is located |\n| **currency** | currency in which instrument is traded by ISO 4217 standard |\n\n### JSON request example\n\n[`https://api.twelvedata.com/indices`](https://api.twelvedata.com/indices?source=docs)\n\n[`https://api.twelvedata.com/indices?symbol=IXIC`](https://api.twelvedata.com/indices?symbol=IXIC&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/indices?format=CSV`](https://api.twelvedata.com/indices?format=CSV&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Exchanges",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/exchanges?show_plan=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"exchanges"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "AMZN",
+									"description": "• Parameter is optional\n• Filter by symbol",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "NASDAQ",
+									"description": "• Parameter is optional\n• Filter by exchange name or mic code",
+									"disabled": true
+								},
+								{
+									"key": "code",
+									"value": "XNGS",
+									"description": "• Parameter is optional\n• Filter by market identifier code (MIC) under ISO 10383 standard",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "United States",
+									"description": "• Parameter is optional\n• Filter by country name or alpha code",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "• Parameter is optional\n• Value can be JSON or CSV; Default JSON",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": "",
+									"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+									"disabled": true
+								},
+								{
+									"key": "show_plan",
+									"value": "true",
+									"description": "• Parameter is optional\n• Adds info on which plan symbol is available\n• Boolean; Default false"
+								}
+							]
+						},
+						"description": "StartFragment\n\n## Exchanges\n\nThis API call return array of stock, ETF or index exchanges available at Twelve Data API. This list is daily updated.\n\nEndFragment\n\n  \n  \n\nStartFragment\n\n### HTTP route\n\n[`/exchanges`](https://api.twelvedata.com/exchanges?source=docs)\n\nEndFragment\n\n  \n  \n\nStartFragment\n\n### API credits\n\n`1` per request\n\nEndFragment\n\n  \n  \n\nStartFragment\n\n### API parameters\n\n| Parameter | Details |\n| --- | --- |\n| **type** | • Parameter is optional  <br>• Value can be `stock`, `etf` or `index`; Default `stock` |\n| **name** | • Parameter is optional  <br>• Filter by exchange name |\n| **code** | • Parameter is optional  <br>• Filter by market identifier code (MIC) under ISO 10383 standard |\n| **country** | • Parameter is optional  <br>• Filter by country name or alpha code |\n| **format** | • Parameter is optional  <br>• Value can be `CSV` or `JSON`; Default `JSON` |\n| **delimiter** | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n| **show_plan** | • Parameter is optional  <br>• Adds info on which plan symbol is available  <br>• Boolean; Default `false` |\n\nEndFragment\n\n  \n  \n\nStartFragment\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **name** | name of exchange |\n| **code** | market identifier code (MIC) under ISO 10383 standard |\n| **country** | country to which stock exchange belongs to |\n| **timezone** | time zone where exchange is located |\n\n### JSON request example\n\n[`https://api.twelvedata.com/exchanges`](https://api.twelvedata.com/exchanges?source=docs)\n\n[`https://api.twelvedata.com/exchanges?type=etf`](https://api.twelvedata.com/exchanges?type=etf&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/exchanges?format=CSV`](https://api.twelvedata.com/exchanges?format=CSV&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Cryptocurrency Exchanges",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cryptocurrency_exchanges",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cryptocurrency_exchanges"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "CSV",
+									"description": "• Parameter is optional\n• Value can be CSV or JSON; Default JSON",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": ";",
+									"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+									"disabled": true
+								}
+							]
+						},
+						"description": "## Cryptocurrency Exchanges\n\nThis API call return array of cryptocurrency exchanges available at Twelve Data API. This list is daily updated.\n\n### HTTP route\n\n[`/cryptocurrency_exchanges`](https://api.twelvedata.com/cryptocurrency_exchanges?source=docs)\n\n### API credits\n\n`1` per request\n\n### API parameters\n\n| Parameter | Details |\n| --- | --- |\n| **format** | • Parameter is optional  <br>• Value can be `CSV` or `JSON`; Default `JSON` |\n| **delimiter** | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **name** | name of cryptocurrency exchange |\n\n### JSON request example\n\n[`https://api.twelvedata.com/cryptocurrency_exchanges`](https://api.twelvedata.com/cryptocurrency_exchanges?source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/cryptocurrency_exchanges?format=CSV`](https://api.twelvedata.com/cryptocurrency_exchanges?format=CSV&source=docs)"
+					},
+					"response": []
+				},
+				{
+					"name": "Technical Indicators Interface",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/technical_indicators",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"technical_indicators"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "CSV",
+									"description": "• Parameter is optional\n• Value can be CSV or JSON; Default JSON",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": ";",
+									"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+									"disabled": true
+								}
+							]
+						},
+						"description": "StartFragment\n\n## Technical Indicators Interface\n\nThis API call return array of objects with available technical indicators. This endpoint might be used to build an abstract interface to make more convenient API calls from the application.\n\nEndFragmentStartFragment\n\n### HTTP route\n\n[`/technical_indicators`](https://api.twelvedata.com/technical_indicators?source=docs)\n\nEndFragment  \nStartFragment\n\n### API credits\n\n`1` per request\n\nEndFragment\n\n  \n  \n\nStartFragment\n\n### API parameters\n\nno input parameters\n\nEndFragment\n\n  \n  \n\nStartFragment\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **enable** | if the indicator is tested, approved and is recommended for use returns `true`, otherwise returns `false` |\n| **full_name** | full indicator name |\n| **description** | brief description of the indicator |\n| **type** | group to which indicator belongs to |\n| **overlay** | if indicator should be plotted over price bars returns `true`, otherwise returns `false` |\n| **parameters** | an array of input parameters where each object might contain:  <br>default: specifies parameter value set by default  <br>range: an array of available parameter values  <br>min_range: if the parameter has lower bound in order to ensure correct calculation  <br>max_range: if the parameter has upper bound in order to ensure correct calculation  <br>type: type of parameter might be `string`, `int`, `float` or `array` |\n| **output_values** | an array of output values where each object might contain:  <br>default_color: suggested color for displaying returns hex color code  <br>display: how output value should be rendered, might be `line`, `histogram`, `candle` or `points`  <br>min_range: if output value has minimum bound  <br>max_range: if output value has maximum bound |\n| **tinting** | an array of tinting values used for proper indicator coloring  <br>display: render pattern  <br>color: returns hex color code  <br>transparency: transparency level returns float value from `0` to `1` level  <br>lower_bound: lower bound of tinting might be either number or one of the return parameters  <br>upper_bound: upper bound of tinting might be either number or one of the return parameters |\n\n### JSON request example\n\n[`https://api.twelvedata.com/technical_indicators`](https://api.twelvedata.com/technical_indicators?source=docs)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Symbol Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/symbol_search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"symbol_search"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "FLRY",
+									"disabled": true
+								},
+								{
+									"key": "outputsize",
+									"value": "50",
+									"description": "• Parameter is optional\n• Number of matches in response\n• Default 30, Max 120;",
+									"disabled": true
+								},
+								{
+									"key": "show_plan",
+									"value": "true",
+									"description": "• Parameter is optional\n• Adds info on which plan symbol is available\n• Boolean; Default false",
+									"disabled": true
+								}
+							]
+						},
+						"description": "StartFragment\n\n## Symbol SearchHigh Demand\n\nThis method helps to find the best matching symbol. It can be used as the base for custom lookups. The response is returned in descending order, with the most relevant instrument at the beginning.\n\nEndFragmentStartFragment\n\n### HTTP route\n\n[`/symbol_search`](https://api.twelvedata.com/symbol_search?symbol=AA&source=docs)\n\n### API credits\n\n`1` per request\n\nEndFragmentStartFragment\n\n### API parameters\n\n| Parameter | Details |\n| --- | --- |\n| **symbol** | • Required parameter  <br>• Symbol to search |\n| **outputsize** | • Parameter is optional  <br>• Number of matches in response  <br>• Default `30`, Max `120`; |\n| **show_plan** | • Parameter is optional  <br>• Adds info on which plan symbol is available  <br>• Boolean; Default `false` |\n\nEndFragmentStartFragment\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **symbol** | ticker symbol of instrument |\n| **instrument_name** | name of exchange |\n| **exchange** | exchange where instrument is traded |\n| **mic_code** | market identifier code (MIC) under ISO 10383 standard |\n| **exchange_timezone** | time zone where exchange is located |\n| **instrument_type** | type of instrument |\n| **country** | country to which stock exchange belongs to |\n\n### JSON request example\n\n[`https://api.twelvedata.com/symbol_search?symbol=AA`](https://api.twelvedata.com/symbol_search?symbol=AA&source=docs)\n\n[`https://api.twelvedata.com/symbol_search?symbol=XAU/`](https://api.twelvedata.com/symbol_search?symbol=XAU/&source=docs)\n\n[`https://api.twelvedata.com/symbol_search?symbol=RY&show_plan=true`](https://api.twelvedata.com/symbol_search?symbol=RY&show_plan=true&source=docs)"
+					},
+					"response": []
+				},
+				{
+					"name": "Earliest Timestamp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/earliest_timestamp?symbol=AMZN&interval=1min&show_plan=true&apikey={{apikey}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"earliest_timestamp"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "AMZN",
+									"description": "• Parameter is optional\n• Filter by symbol"
+								},
+								{
+									"key": "exchange",
+									"value": "NASDAQ",
+									"description": "• Parameter is optional\n• Filter by exchange name or mic code",
+									"disabled": true
+								},
+								{
+									"key": "mic_code",
+									"value": "XNGS",
+									"description": "• Parameter is optional\n• Filter by market identifier code (MIC) under ISO 10383 standard",
+									"disabled": true
+								},
+								{
+									"key": "interval",
+									"value": "1min",
+									"description": "• Parameter is optional\n• Filter by country name or alpha code"
+								},
+								{
+									"key": "format",
+									"value": "CSV",
+									"description": "• Parameter is optional\n• Value can be JSON or CSV; Default JSON",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": ";",
+									"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+									"disabled": true
+								},
+								{
+									"key": "show_plan",
+									"value": "true",
+									"description": "• Parameter is optional\n• Adds info on which plan symbol is available\n• Boolean; Default false"
+								},
+								{
+									"key": "apikey",
+									"value": "{{apikey}}"
+								}
+							]
+						},
+						"description": "## Earliest Timestamp\n\nThis method returns the first available DateTime for a given instrument at the specific interval.\n\nEndFragmentStartFragment\n\n### HTTP route\n\n[`/earliest_timestamp`](https://api.twelvedata.com/earliest_timestamp?symbol=AAPL&interval=1day&apikey=demo&source=docs)\n\n### API credits\n\n`1` per request\n\n### API parameters\n\n| Key | Type | Description |\n| --- | --- | --- |\n| **symbol** | string | • Required parameter  <br>• Symbol ticker of the instrument  <br>E.g. `AAPL`, `EUR/USD`, `ETH/BTC`, ... |\n| **interval** | string | • Required parameter  <br>• Interval between two consecutive points in time series  <br>• Supports: `1min`, `5min`, `15min`, `30min`, `45min`, `1h`, `2h`, `4h`, `1day`, `1week`, `1month` |\n| **exchange** | string | • Parameter is optional  <br>• Exchange where instrument is traded |\n| **mic_code** | string | • Parameter is optional  <br>• Market Identifier Code (MIC) under ISO 10383 standard |\n| **apikey** | string | • Required parameter  <br>• Your API key, which you can obtain for free [here](https://twelvedata.com/pricing) |\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **datetime** | earliest datetime, the format depends on interval |\n| **unix_time** | datetime converted to UNIX timestamp |\n\n### JSON request example\n\n[`https://api.twelvedata.com/earliest_timestamp?symbol=AAPL&interval=1day&apikey=demo`](https://api.twelvedata.com/earliest_timestamp?symbol=AAPL&interval=1day&apikey=demo&source=docs)\n\n[`https://api.twelvedata.com/earliest_timestamp?symbol=AAPL,MSFT&interval=1day&apikey=demo`](https://api.twelvedata.com/earliest_timestamp?symbol=AAPL,MSFT&interval=1day&apikey=demo&source=docs)\n\n[`https://api.twelvedata.com/earliest_timestamp?symbol=EUR/USD&interval=1min&apikey=demo`](https://api.twelvedata.com/earliest_timestamp?symbol=EUR/USD&interval=1min&apikey=demo&source=docs)"
+					},
+					"response": []
+				},
+				{
+					"name": "Market State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/market_state?apikey={{apikey}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"market_state"
+							],
+							"query": [
+								{
+									"key": "exchange",
+									"value": "NASDAQ",
+									"description": "• Parameter is optional\n• Filter by exchange name or mic code",
+									"disabled": true
+								},
+								{
+									"key": "code",
+									"value": "XNGS",
+									"description": "• Parameter is optional\n• Filter by market identifier code (MIC) under ISO 10383 standard",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "United States",
+									"description": "• Parameter is optional\n• Takes country name or alpha code",
+									"disabled": true
+								},
+								{
+									"key": "apikey",
+									"value": "{{apikey}}"
+								}
+							]
+						},
+						"description": "StartFragment\n\n## Market State\n\nCheck the state of all available exchanges, time to open, and time to close.\n\nReturns all available stock exchanges by default\n\nEndFragment\n\n  \nHTTP route\n\n[`/market_state`](https://api.twelvedata.com/market_state?apikey=demo&source=docs)\n\nEndFragmentStartFragment\n\n### API credits\n\n`1` per request\n\n### API parameters\n\n| Key | Type | Description |\n| --- | --- | --- |\n| **exchange** | string | • Parameter is optional  <br>• Takes exchange name or alpha code |\n| **code** | string | • Parameter is optional  <br>• Takes MIC code of exchange |\n| **country** | string | • Parameter is optional  <br>• Takes country name or alpha code |\n| **apikey** | string | • Required parameter  <br>• Your API key, which you can obtain for free [here](https://twelvedata.com/pricing) |\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **name** | the full name of exchange |\n| **code** | Market Identifier Codes (MIC) under ISO 10383 standard |\n| **country** | country where exchange is located |\n| **is_market_open** | `true` if market is open; `false` if closed |\n| **time_after_open** | time after market opening `HH:MM:SS` format; if currently closed - returns `00:00:00` |\n| **time_to_open** | time to market opening in `HH:MM:SS` format; if currently open - returns `00:00:00` |\n| **time_to_close** | time to market closing in `HH:MM:SS` format; if currently closed - returns `00:00:00` |\n\n### JSON request example\n\n[`https://api.twelvedata.com/market_state?exchange=NYSE&apikey=demo`](https://api.twelvedata.com/market_state?exchange=NYSE&apikey=demo&source=docs)\n\n[`https://api.twelvedata.com/market_state?exchange=XMAD&apikey=demo`](https://api.twelvedata.com/market_state?code=XMAD&apikey=demo&source=docs)\n\n[`https://api.twelvedata.com/market_state?country=India&apikey=demo`](https://api.twelvedata.com/market_state?country=India&apikey=demo&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Core Data",
+			"item": [
+				{
+					"name": "Time Series",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/time_series?symbol=AAPL&interval=5min&apikey={{apikey}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"time_series"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "AAPL"
+								},
+								{
+									"key": "interval",
+									"value": "5min",
+									"description": "• Required parameter\n• Interval between two consecutive points in time series\n• Supports: 1min, 5min, 15min, 30min, 45min, 1h, 2h, 4h, 1day, 1week, 1month"
+								},
+								{
+									"key": "exchange",
+									"value": "NASDAQ",
+									"description": "• Parameter is optional\n• Adds info on which plan symbol is available\n• Boolean; Default false",
+									"disabled": true
+								},
+								{
+									"key": "mic_code",
+									"value": null,
+									"description": "• Parameter is optional\n• Market Identifier Code (MIC) under ISO 10383 standard",
+									"disabled": true
+								},
+								{
+									"key": "apikey",
+									"value": "{{apikey}}"
+								}
+							]
+						},
+						"description": "StartFragment\n\n## Time Series\n\nThis API call returns meta and time series for the requested instrument. Metaobject consists of general information about the requested symbol. Time series is the array of objects ordered by time descending with Open, High, Low, Close prices. Non-currency instruments also include volume information.\n\nEndFragmentStartFragment\n\n### HTTP route\n\n[`/time_series`](https://api.twelvedata.com/time_series?symbol=AAPL&interval=1min&apikey=demo&source=docs)\n\nEndFragment  \nStartFragment\n\n### API credits\n\n`1` per symbol\n\n### API parameters\n\n| Key | Type | Description |\n| --- | --- | --- |\n| **symbol** | string | • Required parameter  <br>• Symbol ticker of the instrument  <br>E.g. `AAPL`, `EUR/USD`, `ETH/BTC`, ... |\n| **interval** | string | • Required parameter  <br>• Interval between two consecutive points in time series  <br>• Supports: `1min`, `5min`, `15min`, `30min`, `45min`, `1h`, `2h`, `4h`, `1day`, `1week`, `1month` |\n| **exchange** | string | • Parameter is optional  <br>• Exchange where instrument is traded |\n| **mic_code** | string | • Parameter is optional  <br>• Market Identifier Code (MIC) under ISO 10383 standard |\n| **country** | string | • Parameter is optional  <br>• Country where instrument is traded |\n| **type** | string | • Parameter is optional  <br>• Type to which instrument belongs  <br>• Supports: `Stock`, `Index`, `ETF`, `REIT` |\n| **outputsize** | number | • Parameter is optional  <br>• Number of data points to retrieve  <br>• Supports values in the range from `1` to `5000`  <br>• Default `30` when no date parameters are set, otherwise set to maximum |\n| **format** | string | • Parameter is optional  <br>• Value can be `JSON` or `CSV`  <br>• Default `JSON` |\n| **delimiter** | string | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n| **apikey** | string | • Required parameter  <br>• Your API key, which you can obtain for free [here](https://twelvedata.com/pricing) |\n| **prepost** | string | • Parameter is optional. Only for `Pro` and above plans.  <br>• Available at the `1min`, `5min`, `15min`, and `30min` intervals for all US equities.  <br>• Open, high, low, close values are supplied without volume.  <br>• Default `false` |\n\nEndFragment\n\n##   \nAdvanced Preview\n\n**dp**\n\n| string | • Parameter is optional  <br>• Specifies the number of decimal places for floating values  <br>• Should be in range \\[0,11\\] inclusive  <br>• Type `int`; Default `5` |\n| **order** | string | • Parameter is optional  <br>• Sorting order of the output  <br>• Supports `ASC`, `DESC`; Default `DESC` |\n| **timezone** | string | • Parameter is optional  <br>• Timezone at which output datetime will be displayed  <br>• Supports:  <br>   ◦ `Exchange` for local exchange time  <br>   ◦ `UTC` for datetime at universal UTC standard  <br>   ◦ Timezone name according to the IANA Time Zone Database. E.g. `America/New_York`, `Asia/Singapore`. Full list of timezones can be found [here ↗](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).  <br>*Take note that the IANA Timezone name is case-sensitive*  <br>• Type `string`; Default `Exchange` |\n| **date** | string | • Parameter is optional  <br>• Specifies the exact date to get the data for  <br>• Could be the exact date, e.g. `2021-10-27`, or in human language `today` or `yesterday` |\n| **start_date**  <br>**end_date** | string | <br><br>• Parameters are optional  <br>• Can be used separately and together  <br>• Format `2006-01-02` or `2006-01-02 15:04:05` • Default location:  <br>   ◦ Forex and Cryptocurrencies - `UTC`  <br>   ◦ Stocks - where exchange is located (e.g. for `AAPL` it will be `America/New_York`)  <br>• Both parameters take into account if `timezone` parameter is provided.  <br>If `timezone` is given then, `start_date` and `end_date` will be used in the specified location Examples:<br><br>1.  `&symbol=AAPL&start_date=2019-08-09 15:50:00&…`  <br>    Returns all records starting from 2019-08-09 15:50:00 New York time up to current date<br>2.  `&symbol=EUR/USD&timezone=Asia/Singapore&start_date=2019-08-09 15:50:00&…`  <br>    Returns all records starting from 2019-08-09 15:50:00 Singapore time up to current date<br>3.  `&symbol=ETH/BTC&timezone=Europe/Zurich&start_date=2019-08-09 15:50:00&end_date=2019-08-09 15:55:00&...`  <br>    Returns all records starting from 2019-08-09 15:50:00 Zurich time up to 2019-08-09 15:55:00<br><br> |\n| **previous_close** | string | • Parameter is optional  <br>• If `true`, adds previous bar close price value to the current object  <br>• Only applicable to `/time_series` endpoint  <br>• Type `bool`; Default `false` |\n\nEndFragmentStartFragment\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **meta** | json object with request general information |\n| **datetime** | datetime at local exchange time referring to when the bar with specified interval was opened |\n| **open** | price at the opening of current bar |\n| **high** | highest price which occurred during the current bar |\n| **low** | lowest price which occurred during the current bar |\n| **close** | close price at the end of the bar |\n| **volume** | trading volume which occurred during the current bar |\n\n### JSON request example\n\n[`https://api.twelvedata.com/time_series?symbol=AAPL&interval=1min&apikey=demo`](https://api.twelvedata.com/time_series?symbol=AAPL&interval=1min&apikey=demo&source=docs)\n\n[`https://api.twelvedata.com/time_series?symbol=EUR/USD&interval=1day&outputsize=12&apikey=demo`](https://api.twelvedata.com/time_series?symbol=EUR/USD&interval=1day&outputsize=12&apikey=demo&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/time_series?symbol=BTC/USD&interval=5min&format=CSV&apikey=demo`](https://api.twelvedata.com/time_series?symbol=BTC/USD&interval=5min&format=CSV&apikey=demo&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Exchange Rate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/exchange_rate?symbol=BTC/USD&date=5min&apikey={{apikey}}&dp=3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"exchange_rate"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTC/USD",
+									"description": "• Required parameter\n• The currency pair you want to request can be either forex or cryptocurrency\n• Slash(/) delimiter is used\nE.g. EUR/USD or BTC/ETH will be correct"
+								},
+								{
+									"key": "date",
+									"value": "5min",
+									"description": "• Parameter is optional\n• If not null, will use exchange rate from a specific date or time\n• Format 2006-01-02 or 2006-01-02 15:04:05"
+								},
+								{
+									"key": "format",
+									"value": "JSON",
+									"description": "• Parameter is optional\n• Value can be JSON or CSV\n• Default JSON",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": ";",
+									"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+									"disabled": true
+								},
+								{
+									"key": "apikey",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "dp",
+									"value": "3"
+								}
+							]
+						},
+						"description": "StartFragment\n\n## Exchange Rate\n\nThis API call returns real-time exchange rate for currency pair. Works with forex and cryptocurrency.\n\nEndFragmentStartFragment\n\n### HTTP route\n\n[`/exchange_rate`](https://api.twelvedata.com/exchange_rate?symbol=USD/JPY&apikey=demo&source=docs)\n\n### API credits\n\n`1` per symbol\n\nEndFragmentStartFragment\n\n### API parameters\n\n| Key | Type | Description |\n| --- | --- | --- |\n| **symbol** | string | • Required parameter  <br>• The currency pair you want to request can be either forex or cryptocurrency  <br>• Slash(/) delimiter is used  <br>E.g. `EUR/USD` or `BTC/ETH` will be correct |\n| **date** | string | • Parameter is optional  <br>• If not null, will use exchange rate from a specific date or time  <br>• Format `2006-01-02` or `2006-01-02 15:04:05` |\n| **format** | string | • Parameter is optional  <br>• Value can be `JSON` or `CSV`  <br>• Default `JSON` |\n| **delimiter** | string | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n| **apikey** | string | • Required parameter  <br>• Your API key, which you can obtain for free [here](https://twelvedata.com/pricing) |\n\nEndFragment\n\n## Advanced Params  \nStartFragment\n\n| **dp** | string | • Parameter is optional  <br>• Specifies the number of decimal places for floating values  <br>• Should be in range \\[0,11\\] inclusive  <br>• Type `int`; Default `5` |\n| **timezone** | string | • Parameter is optional  <br>• Timezone at which output datetime will be displayed  <br>• Supports:  <br>   ◦ `Exchange` for local exchange time  <br>   ◦ `UTC` for datetime at universal UTC standard  <br>   ◦ Timezone name according to the IANA Time Zone Database. E.g. `America/New_York`, `Asia/Singapore`. Full list of timezones can be found [here ↗](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).  <br>*Take note that the IANA Timezone name is case-sensitive*  <br>• Type `string`; Default `Exchange` |\n\nEndFragment\n\nStartFragment\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **symbol** | requested currency symbol |\n| **rate** | real-time exchange rate for the corresponding symbol |\n| **timestamp** | unix timestamp of the rate |\n\n### JSON request example\n\n[`https://api.twelvedata.com/exchange_rate?symbol=USD/JPY&apikey=demo`](https://api.twelvedata.com/exchange_rate?symbol=USD/JPY&apikey=demo&source=docs)\n\n[`https://api.twelvedata.com/exchange_rate?symbol=USD/JPY&date=2022-02-22&apikey=demo`](https://api.twelvedata.com/exchange_rate?symbol=USD/JPY&date=2022-02-22&apikey=demo&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/exchange_rate?symbol=EUR/USD&format=CSV&apikey=demo`](https://api.twelvedata.com/exchange_rate?symbol=EUR/USD&format=CSV&apikey=demo&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Currency Conversion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/currency_conversion?symbol=BTC/USD&amount=1000&date=5min&apikey={{apikey}}&dp=3&timezone=America/Sao_Paulo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"currency_conversion"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTC/USD",
+									"description": "• Required parameter\n• The currency pair you want to request can be either forex or cryptocurrency\n• Slash(/) delimiter is used\nE.g. EUR/USD or BTC/ETH will be correct"
+								},
+								{
+									"key": "amount",
+									"value": "1000",
+									"description": "• Required parameter\n• Amount of base currency to be converted into quote currency.\n• Supports values in the range from 0 and above"
+								},
+								{
+									"key": "date",
+									"value": "5min",
+									"description": "• Parameter is optional\n• If not null, will use exchange rate from a specific date or time\n• Format 2006-01-02 or 2006-01-02 15:04:05"
+								},
+								{
+									"key": "format",
+									"value": "JSON",
+									"description": "• Parameter is optional\n• Value can be JSON or CSV\n• Default JSON",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": ";",
+									"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+									"disabled": true
+								},
+								{
+									"key": "apikey",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "dp",
+									"value": "3"
+								},
+								{
+									"key": "timezone",
+									"value": "America/Sao_Paulo"
+								}
+							]
+						},
+						"description": "StartFragment\n\nThis API call returns real-time exchange rate and converted amount for currency pair. Works with forex and cryptocurrency.\n\nEndFragmentStartFragment\n\n### HTTP route\n\n[`/currency_conversion`](https://api.twelvedata.com/currency_conversion?symbol=USD/JPY&amount=122&apikey=demo&source=docs)\n\nEndFragmentStartFragment\n\n### API credits\n\n`1` per symbol\n\nEndFragmentStartFragment\n\n### API parameters\n\n| Key | Type | Description |\n| --- | --- | --- |\n| **symbol** | string | • Required parameter  <br>• The currency pair you want to request can be either forex or cryptocurrency  <br>• Slash(/) delimiter is used  <br>E.g. `EUR/USD` or `BTC/ETH` will be correct |\n| **amount** | number | • Required parameter  <br>• Amount of base currency to be converted into quote currency.  <br>• Supports values in the range from `0` and above |\n| **date** | string | • Parameter is optional  <br>• If not null, will use exchange rate from a specific date or time  <br>• Format `2006-01-02` or `2006-01-02 15:04:05` |\n| **format** | string | • Parameter is optional  <br>• Value can be `JSON` or `CSV`  <br>• Default `JSON` |\n| **delimiter** | string | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n| **apikey** | string | • Required parameter  <br>• Your API key, which you can obtain for free [here](https://twelvedata.com/pricing) |\n\nEndFragmentStartFragment\n\n| **dp** | string | • Parameter is optional  <br>• Specifies the number of decimal places for floating values  <br>• Should be in range \\[0,11\\] inclusive  <br>• Type `int`; Default `5` |\n| **timezone** | string | • Parameter is optional  <br>• Timezone at which output datetime will be displayed  <br>• Supports:  <br>   ◦ `Exchange` for local exchange time  <br>   ◦ `UTC` for datetime at universal UTC standard  <br>   ◦ Timezone name according to the IANA Time Zone Database. E.g. `America/New_York`, `Asia/Singapore`. Full list of timezones can be found [here ↗](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).  <br>*Take note that the IANA Timezone name is case-sensitive*  <br>• Type `string`; Default `Exchange` |\n\n### Response\n\nEndFragmentStartFragment\n\n| Key | Description |\n| --- | --- |\n| **symbol** | requested currency symbol |\n| **rate** | real-time exchange rate for the corresponding symbol |\n| **amount** | amount of converted currency |\n| **timestamp** | unix timestamp of the rate |\n\n### JSON request example\n\n[`https://api.twelvedata.com/currency_conversion?symbol=USD/JPY&amount=122&apikey=demo`](https://api.twelvedata.com/currency_conversion?symbol=USD/JPY&amount=122&apikey=demo&source=docs)\n\n[`https://api.twelvedata.com/currency_conversion?symbol=USD/JPY&amount=122&date=2022-02-22&apikey=demo`](https://api.twelvedata.com/currency_conversion?symbol=USD/JPY&amount=122&date=2022-02-22&apikey=demo&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/currency_conversion?symbol=EUR/USD&amount=15&format=CSV&apikey=demo`](https://api.twelvedata.com/currency_conversion?symbol=EUR/USD&amount=15&format=CSV&apikey=demo&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Quote",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/quote?symbol=AAPL&apikey={{apikey}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"quote"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "AAPL",
+									"description": "• Required parameter\n• Symbol ticker of the instrument\nE.g. AAPL, EUR/USD, ETH/BTC, ..."
+								},
+								{
+									"key": "interval",
+									"value": "1day",
+									"description": "• Optional parameter\n• Interval of the quote\n• Supports: 1min, 5min, 15min, 30min, 45min, 1h, 2h, 4h, 1day, 1week, 1month; Default 1day",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "JSON",
+									"description": "• Parameter is optional\n• Value can be JSON or CSV\n• Default JSON",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": ";",
+									"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+									"disabled": true
+								},
+								{
+									"key": "apikey",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "exchange",
+									"value": "NASDAQ",
+									"description": "• Parameter is optional\n• Exchange where instrument is traded",
+									"disabled": true
+								},
+								{
+									"key": "mic_code",
+									"value": "XNAS",
+									"description": "• Parameter is optional\n• Market Identifier Code (MIC) under ISO 10383 standard",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "United States",
+									"description": "• Parameter is optional\n• Country where instrument is traded",
+									"disabled": true
+								},
+								{
+									"key": "volume_time_period",
+									"value": "1",
+									"description": "• Optional parameter\n• Number of periods for Average Volume\n• Default 9",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "Stock",
+									"description": "• Parameter is optional\n• Type to which instrument belongs\n• Supports: Stock, Index, ETF, REIT",
+									"disabled": true
+								},
+								{
+									"key": "prepost",
+									"value": null,
+									"description": "• Parameter is optional. Only for Pro and above plans.\n• Available at the 1min, 5min, 15min, and 30min intervals for all US equities.\n• Open, high, low, close values are supplied without volume.\n• Default false",
+									"disabled": true
+								},
+								{
+									"key": "eod",
+									"value": "true",
+									"description": " Optional parameter\n• If true, then return data for closed day",
+									"disabled": true
+								},
+								{
+									"key": "rolling_period",
+									"value": "24",
+									"description": "• Optional parameter\n• Number of hours for calculate rolling change at period. By default set to 24, it can be in range [1, 168]",
+									"disabled": true
+								},
+								{
+									"key": "dp",
+									"value": "5",
+									"description": "• Parameter is optional\n• Specifies the number of decimal places for floating values\n• Should be in range [0,11] inclusive\n• Type int; Default 5",
+									"disabled": true
+								},
+								{
+									"key": "timezone",
+									"value": "America/New_York",
+									"description": "• Parameter is optional\n• Timezone at which output datetime will be displayed\n• Supports:\n   ◦ Exchange for local exchange time\n   ◦ UTC for datetime at universal UTC standard\n   ◦ Timezone name according to the IANA Time Zone Database. E.g. America/New_York, Asia/Singapore. Full list of timezones can be found here ↗.\nTake note that the IANA Timezone name is case-sensitive\n• Type string; Default Exchange",
+									"disabled": true
+								}
+							]
+						},
+						"description": "StartFragment\n\nThis API call returns real-time exchange rate and converted amount for currency pair. Works with forex and cryptocurrency.\n\nEndFragmentStartFragment\n\n### HTTP route\n\n[`/currency_conversion`](https://api.twelvedata.com/currency_conversion?symbol=USD/JPY&amount=122&apikey=demo&source=docs)\n\nEndFragmentStartFragment\n\n### API credits\n\n`1` per symbol\n\nEndFragmentStartFragment\n\n### API parameters\n\n| Key | Type | Description |\n| --- | --- | --- |\n| **symbol** | string | • Required parameter  <br>• The currency pair you want to request can be either forex or cryptocurrency  <br>• Slash(/) delimiter is used  <br>E.g. `EUR/USD` or `BTC/ETH` will be correct |\n| **amount** | number | • Required parameter  <br>• Amount of base currency to be converted into quote currency.  <br>• Supports values in the range from `0` and above |\n| **date** | string | • Parameter is optional  <br>• If not null, will use exchange rate from a specific date or time  <br>• Format `2006-01-02` or `2006-01-02 15:04:05` |\n| **format** | string | • Parameter is optional  <br>• Value can be `JSON` or `CSV`  <br>• Default `JSON` |\n| **delimiter** | string | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n| **apikey** | string | • Required parameter  <br>• Your API key, which you can obtain for free [here](https://twelvedata.com/pricing) |\n\nEndFragmentStartFragment\n\n| **dp** | string | • Parameter is optional  <br>• Specifies the number of decimal places for floating values  <br>• Should be in range \\[0,11\\] inclusive  <br>• Type `int`; Default `5` |\n| **timezone** | string | • Parameter is optional  <br>• Timezone at which output datetime will be displayed  <br>• Supports:  <br>   ◦ `Exchange` for local exchange time  <br>   ◦ `UTC` for datetime at universal UTC standard  <br>   ◦ Timezone name according to the IANA Time Zone Database. E.g. `America/New_York`, `Asia/Singapore`. Full list of timezones can be found [here ↗](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).  <br>*Take note that the IANA Timezone name is case-sensitive*  <br>• Type `string`; Default `Exchange` |\n\n### Response\n\nEndFragmentStartFragment\n\n| Key | Description |\n| --- | --- |\n| **symbol** | requested currency symbol |\n| **rate** | real-time exchange rate for the corresponding symbol |\n| **amount** | amount of converted currency |\n| **timestamp** | unix timestamp of the rate |\n\n### JSON request example\n\n[`https://api.twelvedata.com/currency_conversion?symbol=USD/JPY&amount=122&apikey=demo`](https://api.twelvedata.com/currency_conversion?symbol=USD/JPY&amount=122&apikey=demo&source=docs)\n\n[`https://api.twelvedata.com/currency_conversion?symbol=USD/JPY&amount=122&date=2022-02-22&apikey=demo`](https://api.twelvedata.com/currency_conversion?symbol=USD/JPY&amount=122&date=2022-02-22&apikey=demo&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/currency_conversion?symbol=EUR/USD&amount=15&format=CSV&apikey=demo`](https://api.twelvedata.com/currency_conversion?symbol=EUR/USD&amount=15&format=CSV&apikey=demo&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Real-Time Price",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/price?symbol=AAPL&apikey={{apikey}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"price"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "AAPL",
+									"description": "• Required parameter\n• Symbol ticker of the instrument\nE.g. AAPL, EUR/USD, ETH/BTC, ..."
+								},
+								{
+									"key": "exchange",
+									"value": "NASDAQ",
+									"description": "• Parameter is optional\n• Exchange where instrument is traded",
+									"disabled": true
+								},
+								{
+									"key": "mic_code",
+									"value": "XNAS",
+									"description": "• Parameter is optional\n• Market Identifier Code (MIC) under ISO 10383 standard",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "United States",
+									"description": "• Parameter is optional\n• Country where instrument is traded",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "JSON",
+									"description": "• Parameter is optional\n• Value can be JSON or CSV\n• Default JSON",
+									"disabled": true
+								},
+								{
+									"key": "delimiter",
+									"value": ";",
+									"description": "• Parameter is optional\n• Specify the delimiter used when downloading the CSV file\n• Default semicolon ;",
+									"disabled": true
+								},
+								{
+									"key": "apikey",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "prepost",
+									"value": "",
+									"description": "• Parameter is optional. Only for Pro and above plans.\n• Available at the 1min, 5min, 15min, and 30min intervals for all US equities.\n• Open, high, low, close values are supplied without volume.\n• Default false",
+									"disabled": true
+								},
+								{
+									"key": "volume_time_period",
+									"value": "1",
+									"description": "• Optional parameter\n• Number of periods for Average Volume\n• Default 9",
+									"disabled": true
+								},
+								{
+									"key": "dp",
+									"value": "5",
+									"description": "• Parameter is optional\n• Specifies the number of decimal places for floating values\n• Should be in range [0,11] inclusive\n• Type int; Default 5",
+									"disabled": true
+								}
+							]
+						},
+						"description": "StartFragmentStartFragment\n\n## Real-Time Price\n\nThis endpoint is a lightweight method that allows retrieving only the real-time price of the selected instrument.\n\nEndFragmentStartFragment\n\n### HTTP route\n\n[`/price`](https://api.twelvedata.com/price?symbol=AAPL&apikey=demo&source=docs)\n\nEndFragment\n\n### API credits\n\n`1` per symbol\n\n### API parameters\n\n| Key | Type | Description |\n| --- | --- | --- |\n| **symbol** | string | • Required parameter  <br>• Symbol ticker of the instrument  <br>E.g. `AAPL`, `EUR/USD`, `ETH/BTC`, ... |\n| **exchange** | string | • Parameter is optional  <br>• Exchange where instrument is traded |\n| **mic_code** | string | • Parameter is optional  <br>• Market Identifier Code (MIC) under ISO 10383 standard |\n| **country** | string | • Parameter is optional  <br>• Country where instrument is traded |\n| **type** | string | • Parameter is optional  <br>• Type to which instrument belongs  <br>• Supports: `Stock`, `Index`, `ETF`, `REIT` |\n| **format** | string | • Parameter is optional  <br>• Value can be `JSON` or `CSV`  <br>• Default `JSON` |\n| **delimiter** | string | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n| **apikey** | string | • Required parameter  <br>• Your API key, which you can obtain for free [here](https://twelvedata.com/pricing) |\n| **prepost** | string | • Parameter is optional. Only for `Pro` and above plans.  <br>• Available at the `1min`, `5min`, `15min`, and `30min` intervals for all US equities.  <br>• Open, high, low, close values are supplied without volume.  <br>• Default `false` |\n| **dp** | string | • Parameter is optional  <br>• Specifies the number of decimal places for floating values  <br>• Should be in range `[0,11]` inclusive; default `5` |\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **price** | real-time or the latest available price |\n\n### JSON request example\n\n[`https://api.twelvedata.com/price?symbol=AAPL&apikey=demo`](https://api.twelvedata.com/price?symbol=AAPL&apikey=demo&source=docs)\n\n[`https://api.twelvedata.com/price?symbol=TRP&country=Canada&apikey=demo`](https://api.twelvedata.com/price?symbol=TRP&country=Canada&apikey=demo&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/price?symbol=USD/JPY&format=CSV&apikey=demo`](https://api.twelvedata.com/price?symbol=USD/JPY&format=CSV&apikey=demo&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Market Movers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/market_movers/stocks?apikey={{apikey}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"market_movers",
+								"stocks"
+							],
+							"query": [
+								{
+									"key": "direction",
+									"value": "gainers",
+									"description": "• Parameter is optional\n• Specifies direction of the snapshot gainers or losers\n• By default gainers",
+									"disabled": true
+								},
+								{
+									"key": "outputsize",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "United States",
+									"disabled": true
+								},
+								{
+									"key": "apikey",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "dp",
+									"value": "5",
+									"description": "• Parameter is optional\n• Specifies the number of decimal places for floating values\n• Should be in range [0,11] inclusive; default 5",
+									"disabled": true
+								}
+							]
+						},
+						"description": "StartFragmentStartFragment\n\n## Real-Time Price\n\nThis endpoint is a lightweight method that allows retrieving only the real-time price of the selected instrument.\n\nEndFragmentStartFragment\n\n### HTTP route\n\n[`/price`](https://api.twelvedata.com/price?symbol=AAPL&apikey=demo&source=docs)\n\nEndFragment\n\n### API credits\n\n`1` per symbol\n\n### API parameters\n\n| Key | Type | Description |\n| --- | --- | --- |\n| **symbol** | string | • Required parameter  <br>• Symbol ticker of the instrument  <br>E.g. `AAPL`, `EUR/USD`, `ETH/BTC`, ... |\n| **exchange** | string | • Parameter is optional  <br>• Exchange where instrument is traded |\n| **mic_code** | string | • Parameter is optional  <br>• Market Identifier Code (MIC) under ISO 10383 standard |\n| **country** | string | • Parameter is optional  <br>• Country where instrument is traded |\n| **type** | string | • Parameter is optional  <br>• Type to which instrument belongs  <br>• Supports: `Stock`, `Index`, `ETF`, `REIT` |\n| **format** | string | • Parameter is optional  <br>• Value can be `JSON` or `CSV`  <br>• Default `JSON` |\n| **delimiter** | string | • Parameter is optional  <br>• Specify the delimiter used when downloading the `CSV` file  <br>• Default semicolon `;` |\n| **apikey** | string | • Required parameter  <br>• Your API key, which you can obtain for free [here](https://twelvedata.com/pricing) |\n| **prepost** | string | • Parameter is optional. Only for `Pro` and above plans.  <br>• Available at the `1min`, `5min`, `15min`, and `30min` intervals for all US equities.  <br>• Open, high, low, close values are supplied without volume.  <br>• Default `false` |\n| **dp** | string | • Parameter is optional  <br>• Specifies the number of decimal places for floating values  <br>• Should be in range `[0,11]` inclusive; default `5` |\n\n### Response\n\n| Key | Description |\n| --- | --- |\n| **price** | real-time or the latest available price |\n\n### JSON request example\n\n[`https://api.twelvedata.com/price?symbol=AAPL&apikey=demo`](https://api.twelvedata.com/price?symbol=AAPL&apikey=demo&source=docs)\n\n[`https://api.twelvedata.com/price?symbol=TRP&country=Canada&apikey=demo`](https://api.twelvedata.com/price?symbol=TRP&country=Canada&apikey=demo&source=docs)\n\n### Downloadable CSV example\n\n[`https://api.twelvedata.com/price?symbol=USD/JPY&format=CSV&apikey=demo`](https://api.twelvedata.com/price?symbol=USD/JPY&format=CSV&apikey=demo&source=docs)\n\nEndFragment"
+					},
+					"response": []
+				}
+			],
+			"description": "Core data return time series, quotes, rates, and other prices across equities, forex, cryptocurrencies, ETFs, indices along with other data types."
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{apikey}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "apikey",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://api.twelvedata.com",
+			"type": "string"
+		},
+		{
+			"key": "web_socket_url",
+			"value": "wss://ws.twelvedata.com",
+			"type": "string"
+		},
+		{
+			"key": "apikey",
+			"value": "demo",
+			"type": "string"
+		}
+	]
+}
